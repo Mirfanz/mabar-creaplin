@@ -1,0 +1,176 @@
+:root {
+  --p1: red;
+  --p2: blue;
+  --p3: green;
+}
+.monitor {
+  user-select: none;
+  display: flex;
+  /* padding-block: 1rem; */
+  box-sizing: border-box;
+  justify-content: center;
+  background: white;
+  /* border: 1px solid; */
+  overflow: hidden;
+}
+.monitor .kolom {
+  display: flex;
+  flex-direction: column;
+  margin-block: auto;
+  width: 10%;
+  /* background: red; */
+}
+.monitor .kolom:nth-child(3),
+.monitor .kolom:nth-child(4),
+.monitor .kolom:nth-child(7),
+.monitor .kolom:nth-child(8) {
+  flex-direction: column-reverse;
+}
+.monitor .jawab .p1 {
+  box-shadow: inset 0 0 0 1px var(--p1);
+}
+.monitor .jawab .p2 {
+  box-shadow: inset 0 0 0 1px var(--p2);
+}
+.monitor .jawab .p3 {
+  box-shadow: inset 0 0 0 1px var(--p3);
+}
+.monitor .jawab .p1.p2 {
+  box-shadow: inset 0 0 0 1px var(--p1), inset 0 0 0 3px white, inset 0 0 0 4px var(--p2);
+}
+.monitor .jawab .p1.p3 {
+  box-shadow: inset 0 0 0 1px var(--p1), inset 0 0 0 3px white, inset 0 0 0 4px var(--p3);
+}
+.monitor .jawab .p2.p3 {
+  box-shadow: inset 0 0 0 1px var(--p2), inset 0 0 0 3px white, inset 0 0 0 4px var(--p3);
+}
+.monitor .jawab .p1.p2.p3 {
+  box-shadow: inset 0 0 0 1px var(--p1), inset 0 0 0 3px white, inset 0 0 0 4px var(--p2), inset 0 0 0 6px white, inset 0 0 0 7px var(--p3);
+}
+
+.monitor .kolom.jawab {
+  margin-block: auto;
+}
+.monitor .kolom.tanya {
+  margin-block: auto;
+}
+.monitor .kolom.tanya {
+  background: rgb(230, 230, 230);
+}
+.monitor .kolom span {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+}
+.buttons {
+  user-select: none;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  /* gap: 0.5rem; */
+}
+.buttons button {
+  padding-block: 1rem;
+  /* background: rgb(255, 255, 0); */
+  border-radius: 7px;
+  font-size: 1.1rem;
+  margin: 0.25rem;
+  transition: 0.1s;
+  position: relative;
+}
+.buttons button:active {
+  transform: scale(0.9);
+}
+
+.board {
+  width: 100%;
+  /* margin-bottom: 4rem; */
+  background: none;
+}
+.board tr {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  backdrop-filter: opacity(10%);
+  width: 100%;
+  box-sizing: border-box;
+  padding-block: 5px;
+  padding-inline: 1rem;
+  transition: 1s;
+  border-bottom: 2px solid rgb(200, 200, 200);
+}
+.board thead tr {
+  background: rgb(245, 245, 245);
+  padding-top: 0.5rem;
+  border-bottom: 2px solid black;
+}
+.board tbody tr {
+  --clr: rgb(200, 200, 200);
+}
+.board tbody {
+  display: flex;
+  flex-direction: column;
+}
+
+.player:nth-child(1) {
+  --clr: var(--p1);
+}
+.player:nth-child(2) {
+  --clr: var(--p2);
+}
+.player:nth-child(3) {
+  --clr: var(--p3);
+}
+.player.no1 {
+  order: -5;
+}
+.player.no2 {
+  order: 0;
+}
+.player.no3 {
+  order: 5;
+}
+
+.board .player .nama {
+  /* width: 100%; */
+  display: flex;
+  gap: 1rem;
+}
+.board .player .score {
+  /* display: flex; */
+  /* width: 100%; */
+  margin-left: auto;
+}
+.board tbody .nama::before {
+  content: "";
+  background: red;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-block: auto;
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr);
+  padding: 0;
+}
+/* .board .player .nama::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr);
+  padding: 0;
+} */
+
+.container {
+  max-width: 500px;
+}
+
+#btnStart.btn.btn-outline-primary:disabled {
+  opacity: 1;
+  /* background: red; */
+}

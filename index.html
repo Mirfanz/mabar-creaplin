@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
+    <script src="vendor/fontawesome/js/all.min.js"></script>
+    <script src="vendor/sweetalert/sweetalert.js"></script>
+    <title>FanDev-ID | Game Online</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-capitalize">Game Pertama</h1>
+      <p>Bagikan link dibawah ke temanmu!</p>
+      <div class="input-group">
+        <input class="form-control" readonly type="text" id="inputan" placeholder='Klik "Dapatkan Link"' />
+        <button class="btn btn-secondary" id="btnCopy"><i class="fa fa-copy me-2"></i>Salin</button>
+      </div>
+      <div class="d-flex">
+        <button class="btn btn-primary mt-5 mx-auto" id="btnLink"><i class="fa fa-dice me-2"></i>Dapatkan Link</button>
+      </div>
+    </div>
+    <script>
+      let generated = false;
+      let link = "";
+      btnLink.onclick = function () {
+        if (generated) return (document.location.href = link);
+        $.ajax({
+          method: "GET",
+          data: "",
+          url: " https://6830-112-215-171-63.ap.ngrok.io/project/Game/getlink.php",
+          success: function (response) {
+            response = JSON.parse(response);
+            link = " https://6830-112-215-171-63.ap.ngrok.io/project/Game/game1.html?room=" + response;
+            inputan.value = link;
+            generated = true;
+            btnLink.innerHTML = "Masuk Link<i class='fa fa-arrow-right ms-2'></i>";
+          },
+        });
+      };
+      btnCopy.onclick = function () {
+        // document.body.appendChild(elem);
+        // elem.value = index;
+        inputan.select();
+        document.execCommand("copy");
+        if (link === "") return swal({ title: "Gagal Menyalin", text: 'Silahkan klik tombol "Dapatkan Link".', icon: "error", button: false, timer: 3000 });
+        swal({ title: "Link Disalin", text: "Bagikan kepada teman bermainmu.", icon: "success", button: false, timer: 3000 });
+
+        // document.body.removeChild(elem);
+        // btnCopy.classList.add("active");
+      };
+    </script>
+  </body>
+</html>

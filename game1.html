@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/fontawesome/js/all.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+    <title>FanDev-ID | Game Online</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="mt-3" aria-label="breadcrumb">
+        <h1 class="text-capitalize">Game Pertama</h1>
+        <p class="text-secondary" id="greeting"></p>
+        <!-- <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">game</a></li>
+          <li class="breadcrumb-item"><a href="#">psikotes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">pauli</li>
+        </ol> -->
+      </nav>
+      <div class="monitor rounded shadow">
+        <div class="kolom tanya">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom jawab">
+          <span class="p1 p2 p3"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom tanya">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom jawab">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom tanya">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom jawab">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom tanya">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom jawab">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom tanya">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="kolom jawab">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="buttons mt-3" aria-disabled="true">
+        <button class="btn border-primary text-primary" data-btn="1"><i class="fa fa-1"></i></button>
+        <button class="btn border-primary text-primary" data-btn="2"><i class="fa fa-2"></i></button>
+        <button class="btn border-primary text-primary" data-btn="3"><i class="fa fa-3"></i></button>
+        <button class="btn border-primary text-primary" data-btn="4"><i class="fa fa-4"></i></button>
+        <button class="btn border-primary text-primary" data-btn="5"><i class="fa fa-5"></i></button>
+        <button class="btn border-primary text-primary" data-btn="6"><i class="fa fa-6"></i></button>
+        <button class="btn border-primary text-primary" data-btn="7"><i class="fa fa-7"></i></button>
+        <button class="btn border-primary text-primary" data-btn="8"><i class="fa fa-8"></i></button>
+        <button class="btn border-primary text-primary" data-btn="9"><i class="fa fa-9"></i></button>
+        <button class="btn border-primary text-primary" data-btn="0"><i class="fa fa-0"></i></button>
+      </div>
+      <div class="d-flex my-2">
+        <div class="my-auto mx-auto">Muhammad Irfan</div>
+        <button class="btn btn-primary" id="btnStart">Mulai Permainan</button>
+      </div>
+
+      <table class="board mb-2 shadow">
+        <tr class="d-flex align-items-center border-0 bg-warning rounded">
+          <th class="text-capitalize">Leaderboard:</th>
+          <td class="ms-auto text-dark"></td>
+        </tr>
+      </table>
+      <table class="board mt-2 table-hover shadow rounded overflow-hidden mb-4">
+        <thead>
+          <tr class="bg-light">
+            <th scope="col">#</th>
+            <th scope="col" class="text-capitalize me-auto">Nama</th>
+            <th scope="col" class="ms-auto">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="player no1">
+            <th class="badge" scope="row"></th>
+            <!-- <td class="badge"></td> -->
+            <td class="text-capitalize nama"><i>Tidak Ada</i></td>
+            <td class="score"><span>0</span> <i class="fa fa-ribbon"></i></td>
+          </tr>
+          <tr class="player no2">
+            <th class="badge" scope="row"></th>
+            <!-- <td class="badge"></td> -->
+            <td class="text-capitalize nama"><i>Tidak Ada</i></td>
+            <td class="score"><span>0</span> <i class="fa fa-ribbon"></i></td>
+          </tr>
+          <tr class="player no3">
+            <th class="badge" scope="row"></th>
+            <!-- <td class="badge"></td> -->
+            <td class="text-capitalize nama"><i>Tidak Ada</i></td>
+            <td class="score"><span>0</span> <i class="fa fa-ribbon"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- popup -->
+    <div class="d-none">
+      <form id="inputNama">
+        <div class="form-group text-start">
+          <label class="form-label" for="">Masukkan nama anda:</label>
+          <input class="form-control" type="text" placeholder="Muhammad Irfan" />
+          <div class="invalid-feedback"></div>
+          <div class="valid-feedback">Nahh mantap <i class="fa fa-thumbs-up"></i></div>
+          <div class="form-buttons d-flex justify-content-end">
+            <button class="btn-primary btn mt-2 ms-auto" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="vendor/sweetalert/sweetalert.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

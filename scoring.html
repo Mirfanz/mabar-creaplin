@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let waktuMax = 60; // Waktu habis
+      function scoring(posisi, pewaktu) {
+        // let sisaWaktu = waktuMax - pewaktu;
+        let hasil = posisi ** 2 / (pewaktu / 2);
+        return Math.floor(hasil);
+      }
+
+      console.log(scoring(1, 1));
+      console.log(scoring(2, 2));
+      console.log(scoring(3, 3));
+      console.log(scoring(4, 4));
+      console.log(scoring(5, 7));
+    </script>
+  </body>
+</html>
